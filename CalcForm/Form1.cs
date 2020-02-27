@@ -263,7 +263,14 @@ namespace CalcForm
                     break;
                 case Keys.NumPad8:
                 case Keys.D8:
-                    Number_Click(number8, EventArgs.Empty);
+                    if (e.Shift)
+                    {
+                        Operator_Click(mult_b, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        Number_Click(number8, EventArgs.Empty);
+                    }
                     break;
                 case Keys.NumPad9:
                 case Keys.D9:
@@ -272,8 +279,17 @@ namespace CalcForm
                 case Keys.Decimal:
                     Dot_Click(dot_b, EventArgs.Empty);
                     break;
-                case Keys.Add:
                 case Keys.Oemplus:
+                    if (e.Shift)
+                    {
+                        Operator_Click(plus_b, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        Calc_Click(calc_b, EventArgs.Empty);
+                    }
+                    break;
+                case Keys.Add:
                     Operator_Click(plus_b, EventArgs.Empty);
                     break;
                 case Keys.Subtract:
@@ -283,6 +299,7 @@ namespace CalcForm
                 case Keys.Multiply:
                     Operator_Click(mult_b, EventArgs.Empty);
                     break;
+                case Keys.OemQuestion:
                 case Keys.Divide:
                     Operator_Click(div_b, EventArgs.Empty);
                     break;
