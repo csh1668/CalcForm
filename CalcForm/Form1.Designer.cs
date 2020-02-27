@@ -48,6 +48,8 @@
             this.number0 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dot_b = new System.Windows.Forms.Button();
+            this.sign_b = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // number1
@@ -142,7 +144,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Noto Sans CJK KR Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.Font = new System.Drawing.Font("Noto Sans CJK KR Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.Location = new System.Drawing.Point(12, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 43);
@@ -222,10 +226,11 @@
             // 
             // textBox2
             // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(12, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 25);
+            this.textBox2.Size = new System.Drawing.Size(325, 18);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -238,6 +243,26 @@
             this.button1.Text = "←";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Backspace_Click);
+            // 
+            // dot_b
+            // 
+            this.dot_b.Location = new System.Drawing.Point(166, 335);
+            this.dot_b.Name = "dot_b";
+            this.dot_b.Size = new System.Drawing.Size(70, 70);
+            this.dot_b.TabIndex = 0;
+            this.dot_b.Text = ".";
+            this.dot_b.UseVisualStyleBackColor = true;
+            this.dot_b.Click += new System.EventHandler(this.Dot_Click);
+            // 
+            // sign_b
+            // 
+            this.sign_b.Location = new System.Drawing.Point(14, 335);
+            this.sign_b.Name = "sign_b";
+            this.sign_b.Size = new System.Drawing.Size(70, 70);
+            this.sign_b.TabIndex = 0;
+            this.sign_b.Text = "±";
+            this.sign_b.UseVisualStyleBackColor = true;
+            this.sign_b.Click += new System.EventHandler(this.Sign_Click);
             // 
             // Form1
             // 
@@ -262,6 +287,8 @@
             this.Controls.Add(this.number4);
             this.Controls.Add(this.number3);
             this.Controls.Add(this.number2);
+            this.Controls.Add(this.sign_b);
+            this.Controls.Add(this.dot_b);
             this.Controls.Add(this.number0);
             this.Controls.Add(this.number1);
             this.Font = new System.Drawing.Font("Noto Sans CJK KR Bold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -271,6 +298,7 @@
             this.Name = "Form1";
             this.Text = "간단한 계산기";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,6 +325,8 @@
         private System.Windows.Forms.Button number0;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button dot_b;
+        private System.Windows.Forms.Button sign_b;
     }
 }
 
